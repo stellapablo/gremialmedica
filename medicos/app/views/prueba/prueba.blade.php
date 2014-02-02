@@ -5,38 +5,7 @@
 
 @section('content')
 @include('layouts.header')
-        {{ HTML::style('assets/librerias/ckeditor/samples/sample.css'); }}
-        
-        {{ HTML::script('assets/librerias/ckeditor/jquery-ui-1.9.2.custom/js/jquery-1.8.3.js') }}
-        {{ HTML::script('assets/librerias/ckeditor/ckeditor.js') }}
-        {{ HTML::script('assets/librerias/ckeditor/adapters/jquery.js') }}
-    <script type="text/javascript">
-    CKEDITOR.config.extraPlugins = 'savebtn';
-    CKEDITOR.config.filebrowserBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=files') }};"
-    CKEDITOR.config.filebrowserImageBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=images') }};";
-    CKEDITOR.config.filebrowserFlashBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=flash') }};";
-    CKEDITOR.config.filebrowserUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=files') }};";
-    CKEDITOR.config.filebrowserImageUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=images') }};";
-    CKEDITOR.config.filebrowserFlashUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=flash') }};";
 
-    $(document).ready(function() {
-        $('#textoSuperiorDerecho').ckeditor();
-
-
-
-        $('#textoSuperiorDerecho').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            // If you want to convert the data to upper case whenever you get a value.
-            data.dataValue = data.dataValue.toUpperCase();
-            // alert(data.dataValue.toUpperCase());
-            //alert(this.id)
-            CKEDITOR.config.saveSubmitURL = 'guarda.php';
-
-        });
-
-
-
-    });
-</script>
 <!--------------Content--------------->
 <section id="content">
     <div class="wrap-content zerogrid">
@@ -150,5 +119,36 @@
     </div>
 </section>
 
+        {{ HTML::style('assets/librerias/ckeditor/samples/sample.css'); }}
+        
+        
+        {{ HTML::script('assets/librerias/ckeditor/ckeditor.js') }}
+        {{ HTML::script('assets/librerias/ckeditor/adapters/jquery.js') }}
+    <script type="text/javascript">
+    CKEDITOR.config.extraPlugins = 'savebtn';
+    CKEDITOR.config.filebrowserBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=files') }};"
+    CKEDITOR.config.filebrowserImageBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=images') }};";
+    CKEDITOR.config.filebrowserFlashBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=flash') }};";
+    CKEDITOR.config.filebrowserUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=files') }};";
+    CKEDITOR.config.filebrowserImageUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=images') }};";
+    CKEDITOR.config.filebrowserFlashUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=flash') }};";
 
+    $(document).ready(function() {
+        $('#textoSuperiorDerecho').ckeditor();
+
+
+
+        $('#textoSuperiorDerecho').ckeditor().on('getData.ckeditor', function(event, editor, data) {
+            // If you want to convert the data to upper case whenever you get a value.
+            data.dataValue = data.dataValue.toUpperCase();
+            // alert(data.dataValue.toUpperCase());
+            //alert(this.id)
+            CKEDITOR.config.saveSubmitURL = 'guarda.php';
+
+        });
+
+
+
+    });
+</script>
 @stop

@@ -47,7 +47,7 @@
 
 
         
-         {{ HTML::script('assets/js/jquery.min.js') }}
+         {{ HTML::script('assets/librerias/ckeditor/jquery-ui-1.9.2.custom/js/jquery-1.8.3.js') }}
          {{ HTML::script('assets/js/responsiveslides.js') }}
            <script type="text/javascript">
             $(function() {
