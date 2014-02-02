@@ -119,7 +119,7 @@
     </div>
 </section>
 
-        {{ HTML::style('assets/librerias/ckeditor/samples/sample.css'); }}
+
         
         
         {{ HTML::script('assets/librerias/ckeditor/ckeditor.js') }}
