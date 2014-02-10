@@ -24,5 +24,15 @@ class PruebaController extends BaseController {
 	{
 		return View::make('prueba.prueba2');
 	}
+        
+	public function pruebaGuarda()
+	{
+            $data = Input::all();
+            $text = $data['text'];
+            
+            echo ($text);
+           // return Redirect::to('/');
+          //  return View::make('prueba.prueba2');
+	}
 
 }

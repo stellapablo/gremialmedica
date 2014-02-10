@@ -31,11 +31,26 @@ Route::get('/test', function() {
 //});
 
 
+Route::get('/', 'portadaController@inicio');
+Route::get('edicion/portada/', 'portadaController@edicion');
+
+Route::post('edicion/actualizarPortada', 'portadaController@actualizarPortada');
+
 
 Route::get('/prueba', 'PruebaController@pruebaWelcome');
 
-Route::get('/prueba2', 'PruebaController@prueba2Welcome');
+Route::get('/prueba2',    'PruebaController@prueba2Welcome');
 
 Route::get('/prueba2/do', 'PruebaController@prueba2Welcome');
 
+Route::post('/prueba/guarda', 'PruebaController@pruebaGuarda');
+
 Route::resource('afiliados', 'AfiliadosController');
+
+Route::resource('/sobre_nosotros', 'sobreNosotrosController@SobreNosotros');
+
+Route::resource('edicion/sobre_nosotros', 'sobreNosotrosController@SobreNosotrosEdicion');
+
+Route::post('edicion/actualizarsobre_nosotros', 'sobreNosotrosController@actualizarsobre_nosotros');
+
+Route::post('afiliate', 'sobreNosotrosController@actualizarsobre_nosotros');

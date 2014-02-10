@@ -11,13 +11,13 @@ class UserTableSeeder extends Seeder {
     
     public function run() {
         
-        DB::table('usuarios')->truncate();
+        DB::table('users')->truncate();
         
         $usuarios = array(
             array('nick' => 'Test', 'password' => Hash::make('gremial'), 'email' => 'test@test.com'),
         );
 
-        DB::table('usuarios')->insert($usuarios);
+        DB::table('users')->insert($usuarios);
     }
 
 }

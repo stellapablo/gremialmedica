@@ -5,13 +5,14 @@
 
 @section('content')
 @include('layouts.header')
+@include('layouts.carrucel')
 
 <!--------------Content--------------->
 <section id="content">
     <div class="wrap-content zerogrid">
 
-        <div class="row block01" id="texto_central" contenteditable="true"> 
-            {{ $sobre_nosotros->titulo_principal  }}
+        <div class="row block01" id="texto_central" > 
+            {{ $portada->texto_central  }}
         </div>
 
         <div class=divider></div>
@@ -123,79 +124,7 @@
         
         
         
-        {{ HTML::script('assets/librerias/ckeditor/ckeditor.js') }}
-        {{ HTML::script('assets/librerias/ckeditor/adapters/jquery.js') }}
-    <script type="text/javascript">
-CKEDITOR.config.toolbar = 'Full';
+        
+        
 
-CKEDITOR.config.toolbar_Full =
-[
-    ['Source','-','Save','NewPage','Preview','-','Templates'],
-    ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
-    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-    ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
-    '/',
-    ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
-    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-    ['Link','Unlink','Anchor'],
-    ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
-    '/',
-    ['Styles','Format','Font','FontSize'],
-    ['TextColor','BGColor'],
-    ['Maximize', 'ShowBlocks','-','About'],
-    ['savebtn']
-];
-        
-    CKEDITOR.config.extraPlugins = 'link,savebtn';
-    CKEDITOR.config.filebrowserBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=files') }};"
-    CKEDITOR.config.filebrowserImageBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=images') }};";
-    CKEDITOR.config.filebrowserFlashBrowseUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/browse.php?type=flash') }};";
-    CKEDITOR.config.filebrowserUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=files') }};";
-    CKEDITOR.config.filebrowserImageUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=images') }};";
-    CKEDITOR.config.filebrowserFlashUploadUrl = "{{ URL::to('assets/librerias/ckeditor/plugins/kcfinder/upload.php?type=flash') }};";
-
-    $(document).ready(function() {
-        $('#texto_superior_derecho').ckeditor();
-        $('#texto_superior_derecho').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-        
-        $('#texto_central').ckeditor();
-        $('#texto_central').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-        
-        $('#footer_titulo_primero').ckeditor();
-        $('#footer_titulo_primero').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-        
-        $('#footer_titulo_segundo').ckeditor();
-        $('#footer_titulo_segundo').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-        
-        $('#footer_titulo_tercero').ckeditor();
-        $('#footer_titulo_tercero').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-        
-        $('#footer_titulo_primero_descripcion').ckeditor();
-        $('#footer_titulo_primero_descripcion').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-        
-        $('#footer_titulo_segundo_descripcion').ckeditor();
-        $('#footer_titulo_segundo_descripcion').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-        
-        $('#footer_titulo_tercero_descripcion').ckeditor();
-        $('#footer_titulo_tercero_descripcion').ckeditor().on('getData.ckeditor', function(event, editor, data) {
-            CKEDITOR.config.saveSubmitURL = 'actualizarPortada';
-        });
-    });
-    
-</script>
 @stop

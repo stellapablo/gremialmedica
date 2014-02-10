@@ -33,7 +33,9 @@ class AfiliadosController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('afiliados.create');
+                    $coleccion2 = Portada::all();
+                    $portada= ($coleccion2->find(1));
+		return View::make('afiliados.create', compact('portada'));
 	}
 
 	/**

@@ -5,13 +5,14 @@
 
 @section('content')
 @include('layouts.header')
+@include('layouts.carrucel')
 
 <!--------------Content--------------->
 <section id="content">
     <div class="wrap-content zerogrid">
 
         <div class="row block01" id="texto_central" contenteditable="true"> 
-            {{ $sobre_nosotros->titulo_principal  }}
+            {{ $portada->texto_central  }}
         </div>
 
         <div class=divider></div>
