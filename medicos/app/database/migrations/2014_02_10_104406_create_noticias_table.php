@@ -18,13 +18,13 @@ class CreateNoticiasTable extends Migration {
 			$table->text('descripcion');
 			$table->text('desarrollo');
                         $table->text('fecha');                        
-                        $table->text('imagen');            
-                        $table->integer('estado');
-                        $table->text('slug');
+                        $table->text('imagen');
+                        $table->integer('estadoNoticia_id');
+                        $table->string('slug', 200)->unique();
                         
                         $table->integer('seccion');
-			$table->integer('tipo');			
-			$table->timestamps();
+			$table->integer('tipo');
+			$table->timestamps();                        
 		});
 	}
 

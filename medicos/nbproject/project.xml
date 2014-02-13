@@ -6,6 +6,7 @@
             <name>medicos</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Descripcion</word>
             <word>endif</word>
         </spellchecker-wordlist>
     </configuration>

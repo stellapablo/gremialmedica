@@ -58,35 +58,29 @@
 
         <div class="row block03">
             <div class="title"><span>Novedades</span></div>
-
+            @if ($noticias->count())
+            
+            @foreach ($noticias as $noticia)
+            
             <div class="col-1-4">
+                
                 <div class="wrap-col">
-                    <img src="{{ asset('assets/images/imagenes_carrucel/20140122_093947.jpg') }}" />
-                    <h2>Noticia 1</h2>
-                    <p>Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. </p>
+                    <a href="{{$noticia->slug}}">
+                        <img src="{{$noticia->imagen}}" />
+                    </a>
+                    <h2>
+                        <a href="{{$noticia->slug}}">
+                            {{$noticia->titulo}}
+                        </a>
+                    </h2>
+                    {{$noticia->descripcion}}
                 </div>
+                
             </div>
-            <div class="col-1-4">
-                <div class="wrap-col">
-                    <img src="{{ asset('assets/images/imagenes_carrucel/20140122_093827.jpg') }}" />
-                    <h2>Noticia 2</h2>
-                    <p>Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. </p>
-                </div>
-            </div>
-            <div class="col-1-4">
-                <div class="wrap-col">
-                    <img src="{{ asset('assets/images/imagenes_carrucel/20140122_120209.jpg') }}" />
-                    <h2>Noticia 3</h2>
-                    <p>Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. </p>
-                </div>
-            </div>
-            <div class="col-1-4">
-                <div class="wrap-col">
-                    <img src="{{ asset('assets/images/imagenes_carrucel/20140122_093947.jpg') }}"  />
-                    <h2>Noticia 4</h2>
-                    <p>Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. </p>
-                </div>
-            </div>
+            @endforeach
+            @else
+                NO HAY NOTICIAS
+            @endif
         </div>
 
         <div class="row block03 gallery">

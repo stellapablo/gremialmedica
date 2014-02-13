@@ -41,6 +41,9 @@
         {{ HTML::script('admin/js/plugins/morris/morris.js') }}
         {{ HTML::script('admin/js/sb-admin.js') }}
         {{ HTML::script('admin/js/demo/dashboard-demo.js') }}
+        
+        {{ HTML::script('assets/librerias/ckeditor/ckeditor.js') }}
+        {{ HTML::script('assets/librerias/ckeditor/adapters/jquery.js') }}
 
         <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
     </body>

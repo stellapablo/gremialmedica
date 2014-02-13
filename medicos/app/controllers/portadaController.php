@@ -15,14 +15,18 @@ class PortadaController extends BaseController {
 
     public function inicio() {
         $portada = $this->portada->find(1);
+        $noticias = Noticias::where('estadoNoticia_id', '=', 1)
+                        ->get();
 
-
-        return View::make('portada.portada', compact('portada'));
+        return View::make('portada.portada', compact('portada','noticias'));
     }
 
     public function edicion() {
         $portada = $this->portada->find(1);
-        return View::make('portada.portada_edicion', compact('portada'));
+        $noticias = Noticias::where('estadoNoticia_id', '=', 1)
+                        ->get();
+        
+        return View::make('portada.portada_edicion', compact('portada','noticias'));
     }
 
     public function prueba2Welcome() {

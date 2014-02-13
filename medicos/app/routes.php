@@ -54,3 +54,15 @@ Route::resource('edicion/sobre_nosotros', 'sobreNosotrosController@SobreNosotros
 Route::post('edicion/actualizarsobre_nosotros', 'sobreNosotrosController@actualizarsobre_nosotros');
 
 Route::post('afiliate', 'sobreNosotrosController@actualizarsobre_nosotros');
+
+Route::get('nueva/noticia', 'noticiasController@nuevaNoticia');
+
+Route::post('/guardarNoticia', 'noticiasController@guardarNoticia');
+
+Route::get('/noticia/{slug}', 'noticiasController@noticiaActual');
+
+Route::get('edicion/noticia/{slug}', 'noticiasController@editarNoticiaActual');
+
+Route::post('/edicion/noticia/{slug}/actualizarNoticia', 'noticiasController@editarNoticiaActual_guardar');
+
+Route::get('/listado/noticas','noticiasController@listarNoticias');
