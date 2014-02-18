@@ -65,4 +65,11 @@ Route::get('edicion/noticia/{slug}', 'noticiasController@editarNoticiaActual');
 
 Route::post('/edicion/noticia/{slug}/actualizarNoticia', 'noticiasController@editarNoticiaActual_guardar');
 
-Route::get('/listado/noticas','noticiasController@listarNoticias');
+Route::get('/listado/noticias','noticiasController@listarNoticias');
+
+Route::post('/listado/actualizarEstadoNoticia','noticiasController@actualizarEstadoNoticia');
+
+Route::get('edicionNoticia', function()
+ {
+    return URL::action('noticiasController@editarNoticiaActual', array('slug'));
+ });

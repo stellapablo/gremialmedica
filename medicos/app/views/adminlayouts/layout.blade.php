@@ -44,6 +44,10 @@
         
         {{ HTML::script('assets/librerias/ckeditor/ckeditor.js') }}
         {{ HTML::script('assets/librerias/ckeditor/adapters/jquery.js') }}
+        
+        {{ HTML::style('assets/librerias/datatables-1.9.4/media/css/jquery.dataTables.css'); }}
+ 
+        {{ HTML::script('assets/librerias/datatables-1.9.4/media/js/jquery.dataTables.js'); }}
 
         <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
     </body>

@@ -93,7 +93,23 @@ class NoticiasController extends BaseController {
         $estadoNoticia = estadoNoticia::lists('descripcion', 'id');
         return View::make('noticias.noticias_listado', compact('noticias','estadoNoticia'));
     }
-
     
+    public function actualizarEstadoNoticia(){
+        $data  = Input::all();
+        
+        $idComp  = explode("--",$data['id']);
+
+        $campo = $idComp[0]; // nombre del campo
+        $id    = $idComp[1]; // id del registro
+        $valor = $data['valor']; // valor por el cual reemplazar        
+        
+        $affectedRows = Noticias::where('id', '=', $id)->update(array('estadoNoticia_id' => $valor));
+    }
+    public function redirectEdicionNoticia($slug){
+       // $this->editarNoticiaActual($slug);
+        
+        $estadoNoticia = estadoNoticia::lists('descripcion', 'id');
+        return View::make('noticias.nuevaNoticia', compact('estadoNoticia'));
+    }
 
 }

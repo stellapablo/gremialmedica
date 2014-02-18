@@ -23,20 +23,20 @@
                     <div class="wrap-nav">
                         <div class="menu">
                             <ul>
-                                <li class="current"><a href="/">Inicio</a></li>
+                                <li class="current">{{link_to('/', 'inicio', $attributes = array(), $secure = null);}}</li>
                                 <li><a href="#">Afiliate</a></li>
                                 <li><a href="#">Galeria</a></li>
-                                <li><a href="sobre_nosotros">Sobre Nosotros</a></li>
+                                <li>{{link_to('sobre_nosotros', 'Sobre Nosotros', $attributes = array(), $secure = null);}}</li>
                                 <li><a href="#">Contacto</a></li>
                             </ul>
                         </div>
 
                         <div class="minimenu"><div>MENU</div>
-                            <select onchange="location = this.value">
-                                <option></option>
+                            <select onchange="location = this.value" >
+                                <option onclick="location = this.value" value="{{url('/', $parameters = array(), $secure = null);}}">Inicio</option>
                                 <option value="/">Afiliate</option>
                                 <option value="#">Galeria</option>
-                                <option value="sobre_nosotros">Sobre Nosotros</option>
+                                <option value="{{url('sobre_nosotros', $parameters = array(), $secure = null);}}">Sobre Nosotros</option>
                                 <option value="index.html">Contacto</option>
                             </select>
                         </div>
