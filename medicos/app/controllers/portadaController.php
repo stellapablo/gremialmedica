@@ -17,16 +17,21 @@ class PortadaController extends BaseController {
         $portada = $this->portada->find(1);
         $noticias = Noticias::where('estadoNoticia_id', '=', 1)
                         ->get();
+        
+        $carrucel = Carrucel::all();
+        $galeria = Galerium::all();
 
-        return View::make('portada.portada', compact('portada','noticias'));
+        return View::make('portada.portada', compact('portada','noticias','carrucel','galeria'));
     }
 
     public function edicion() {
         $portada = $this->portada->find(1);
         $noticias = Noticias::where('estadoNoticia_id', '=', 1)
                         ->get();
+        $carrucel = Carrucel::all();
+        $galeria = Galerium::all();
         
-        return View::make('portada.portada_edicion', compact('portada','noticias'));
+        return View::make('portada.portada_edicion', compact('portada','noticias','carrucel','galeria'));
     }
 
     public function prueba2Welcome() {

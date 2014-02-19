@@ -24,20 +24,20 @@
                         <div class="menu">
                             <ul>
                                 <li class="current">{{link_to('/', 'inicio', $attributes = array(), $secure = null);}}</li>
-                                <li><a href="#">Afiliate</a></li>
-                                <li><a href="#">Galeria</a></li>
+                                <li><a href="{{ action('AfiliadosController@create') }}">Afiliate</a></li>
+                                <li>{{link_to('galeria_seccion', 'Galeria', $attributes = array(), $secure = null);}}</li>
                                 <li>{{link_to('sobre_nosotros', 'Sobre Nosotros', $attributes = array(), $secure = null);}}</li>
-                                <li><a href="#">Contacto</a></li>
+                                <li>{{link_to('/contacto', 'Contacto', $attributes = array(), $secure = null);}}</li>
                             </ul>
                         </div>
 
                         <div class="minimenu"><div>MENU</div>
                             <select onchange="location = this.value" >
                                 <option onclick="location = this.value" value="{{url('/', $parameters = array(), $secure = null);}}">Inicio</option>
-                                <option value="/">Afiliate</option>
-                                <option value="#">Galeria</option>
+                                <option value="{{ action('AfiliadosController@create') }}">Afiliate</option>
+                                <option value="{{url('galeria_seccion', $parameters = array(), $secure = null);}}">Galeria</option>
                                 <option value="{{url('sobre_nosotros', $parameters = array(), $secure = null);}}">Sobre Nosotros</option>
-                                <option value="index.html">Contacto</option>
+                                <option value="{{url('/contacto', $parameters = array(), $secure = null);}}">Contacto</option>
                             </select>
                         </div>
                     </div>

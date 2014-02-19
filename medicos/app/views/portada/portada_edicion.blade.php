@@ -85,31 +85,17 @@
 
         <div class="row block03 gallery">
             <div class="title"><span>Galeria de Fotos</span></div>
+            @if ($galeria->count())
+            @foreach ($galeria as $galeri)
             <div class="col-1-2">
                 <div class="wrap-col">
-                    <a href="#"><img src="{{ asset('assets/images/imagenes_carrucel/20140122_093947.jpg') }}"  class="grayscale"/></a>
+                    <a href="#"><img src="{{ $galeri->imagen; }}"  class="grayscale"/></a>
                 </div>
             </div>
-            <div class="col-1-2">
-                <div class="wrap-col">
-                    <a href="#"><img src="{{ asset('assets/images/imagenes_carrucel/20140122_093827.jpg') }}" class="grayscale"/></a>
-                </div>
-            </div>
-            <div class="col-1-2">
-                <div class="wrap-col">
-                    <a href="#"><img src="{{ asset('assets/images/imagenes_carrucel/20140122_120209.jpg') }}" class="grayscale"/></a>
-                </div>
-            </div>
-            <div class="col-1-2">
-                <div class="wrap-col">
-                    <a href="#"><img src="{{ asset('assets/images/imagenes_carrucel/20140122_093947.jpg') }}" class="grayscale"/></a>
-                </div>
-            </div>
-            <div class="col-1-2">
-                <div class="wrap-col">
-                    <a href="#"><img src="{{ asset('assets/images/imagenes_carrucel/20140122_093827.jpg') }}" class="grayscale"/></a>
-                </div>
-            </div>
+            @endforeach 
+            @else
+                NO HAY imagenes
+            @endif
         </div>
 
     </div>

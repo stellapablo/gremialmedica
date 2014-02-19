@@ -114,13 +114,9 @@
 			<div class="col-1-3">
 				<div class="wrap-col">
 					<div class="box">
-						<div class="heading"><h2>Find Us</h2></div>
+						<div class="heading"><h2>Ofrecemos:</h2></div>
 						<div class="content">							
-							<p>Petru Zadnipru 15/2 Chisinau 2044, Republic of Moldova</p>
-							<p>Freephone : +1 800 445 7880</p>
-							<p>Telephone : +1 800 995 6880</p>
-							<p>Fax : +1 800 465 1990</p>
-							<p>Email : zerotheme@demolink.com</p>
+							<p>Lorem ipsum dolor slo onsec tueraliquet Morbi nec In Curabitur lreaoreet nisl lorem in pellente e vidicus pannel impirus sadintas velisurabitur lreaoreet nisl lorem in pellente vidicus pannel</p>
 						</div>
 					</div>
 				</div>

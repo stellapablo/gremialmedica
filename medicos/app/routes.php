@@ -73,3 +73,19 @@ Route::get('edicionNoticia', function()
  {
     return URL::action('noticiasController@editarNoticiaActual', array('slug'));
  });
+
+Route::resource('carrucels', 'CarrucelsController');
+
+Route::resource('galeria', 'GaleriaController');
+
+
+Route::resource('galeria_seccion', 'GaleriaController@galeria_seccion');
+
+
+
+
+Route::resource('/contacto', 'contactoController@Contacto');
+
+Route::resource('edicion/contacto', 'contactoController@ContactoEdicion');
+
+Route::post('edicion/actualizarContacto', 'contactoController@actualizarContacto');

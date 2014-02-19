@@ -1,10 +1,11 @@
-@extends('layouts.scaffold')
+@extends('adminlayouts.layout')
 
-@section('main')
+@section('content')
 
-<h1>Show Afiliado</h1>
 
-<p>{{ link_to_route('afiliados.index', 'Return to all afiliados') }}</p>
+<h1>Mostrar Afiliado</h1>
+
+<p>{{ link_to_route('afiliados.index', 'Volver al Listado de Afiliados') }}</p>
 
 <table class="table table-striped table-bordered">
 	<thead>
