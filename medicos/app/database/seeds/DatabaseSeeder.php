@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CarrucelsTableSeeder');
 		$this->call('GaleriaTableSeeder');
                 $this->call('contactoTableSeeder');
+		$this->call('CentraltextosTableSeeder');
 	}
 
 }

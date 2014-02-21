@@ -18,42 +18,37 @@
         <div class=divider></div>
 
         <div class="row block02">
+        @if ($Centraltexto->count())
+        @foreach ($Centraltexto as $Central)
+        
             <div class="col-1-3">
                 <div class="wrap-col">
-                    <a href="#"><h2><span>P</span>rimero</h2></a>
-                    <p>Lorem ipsum dolor slo onsec tueraliquet Morbi nec In Curabitur lreaoreet nisl lorem in pellente.</p>
+<?php
+            $myvalue = $Central->texto;
+            $array = explode(' ',trim($myvalue));
+            //echo $array[0];
+
+            foreach ($array as $key => $value) {
+
+                if($key==0)
+                {
+                   $primeraLetra = substr($value,0,1);//primera letra
+                   $palabra = substr($value,1);
+
+                    echo '<p><a href="#"><h2><span>'.$primeraLetra.'</span>';
+                    echo $palabra.'</a></h2>';
+                }else{
+                echo $value;
+                echo " ";
+                }
+
+            }
+            echo "</p>";
+?>
                 </div>
             </div>
-            <div class="col-1-3">
-                <div class="wrap-col">
-                    <a href="#"><h2><span>S</span>egundo</h2></a>
-                    <p>Lorem ipsum dolor slo onsec tueraliquet Morbi nec In Curabitur lreaoreet nisl lorem in pellente.</p>
-                </div>
-            </div>
-            <div class="col-1-3">
-                <div class="wrap-col">
-                    <a href="#"><h2><span>T</span>ercero</h2></a>
-                    <p>Lorem ipsum dolor slo onsec tueraliquet Morbi nec In Curabitur lreaoreet nisl lorem in pellente.</p>
-                </div>
-            </div>
-            <div class="col-1-3">
-                <div class="wrap-col">
-                    <a href="#"><h2><span>C</span>uarto</h2></a>
-                    <p>Lorem ipsum dolor slo onsec tueraliquet Morbi nec In Curabitur lreaoreet nisl lorem in pellente.</p>
-                </div>
-            </div>
-            <div class="col-1-3">
-                <div class="wrap-col">
-                    <a href="#"><h2><span>Q</span>into</h2></a>
-                    <p>Lorem ipsum dolor slo onsec tueraliquet Morbi nec In Curabitur lreaoreet nisl lorem in pellente.</p>
-                </div>
-            </div>
-            <div class="col-1-3">
-                <div class="wrap-col">
-                    <a href="#"><h2><span>S</span>exto</h2></a>
-                    <p>Lorem ipsum dolor slo onsec tueraliquet Morbi nec In Curabitur lreaoreet nisl lorem in pellente.</p>
-                </div>
-            </div>
+        @endforeach
+        @endif
         </div>
 
         <div class="row block03">
@@ -66,7 +61,11 @@
                 
                 <div class="wrap-col">
                     <a href="{{$noticia->slug}}">
-                        <img src="{{$noticia->imagen}}" />
+                                <?php
+                                        if($noticia->imagen!=''){
+                                ?>
+                                        <img src="{{$noticia->imagen}}" />
+                                <?php }; ?>
                     </a>
                     <h2>
                         <a href="{{$noticia->slug}}">

@@ -45,6 +45,9 @@ class NoticiasController extends BaseController {
         $noticias->estadoNoticia_id = $estadoNoticia_id;
         $noticias->slug = $slug;
         $noticias->save();
+        
+        
+        return Redirect::to('/listado/noticias');
         }
     }
     

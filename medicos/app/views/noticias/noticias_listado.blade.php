@@ -52,7 +52,13 @@
             </td>
             
             <td>{{$noticia->slug}}</td>
-            <td><img widtd="80px" height="80px" src="{{$noticia->imagen}}" /> </td>
+            <td>
+                <?php
+                if($noticia->imagen!=''){
+                ?>
+                <img widtd="80px" height="80px" src="{{$noticia->imagen}}" /> 
+                <?php }; ?>
+            </td>
             <td><a class="btn btn-info btn-xs" href="{{URL::action('noticiasController@editarNoticiaActual', [$noticia->slug]);}}">Editar</a></td>
         </tr>
         @endforeach

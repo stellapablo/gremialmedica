@@ -13,8 +13,11 @@
                 {{$noticia->titulo}}
                 {{$noticia->fecha}}
                     <article>
+                <?php
+                if($noticia->imagen!=''){
+                ?>
                         <img src="{{$noticia->imagen}}" />
-                        
+                <?php }; ?>
                        {{$noticia->desarrollo}}
                     </article>
                 @endforeach

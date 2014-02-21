@@ -20,8 +20,10 @@ class PortadaController extends BaseController {
         
         $carrucel = Carrucel::all();
         $galeria = Galerium::all();
+        $Centraltexto = Centraltexto::all();
+        
 
-        return View::make('portada.portada', compact('portada','noticias','carrucel','galeria'));
+        return View::make('portada.portada', compact('portada','noticias','carrucel','galeria','Centraltexto'));
     }
 
     public function edicion() {
@@ -30,8 +32,9 @@ class PortadaController extends BaseController {
                         ->get();
         $carrucel = Carrucel::all();
         $galeria = Galerium::all();
+        $Centraltexto = Centraltexto::all();
         
-        return View::make('portada.portada_edicion', compact('portada','noticias','carrucel','galeria'));
+        return View::make('portada.portada_edicion', compact('portada','noticias','carrucel','galeria','Centraltexto'));
     }
 
     public function prueba2Welcome() {

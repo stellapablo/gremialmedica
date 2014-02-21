@@ -48,6 +48,14 @@
             </li>
             <li>
                 <a href="{{url('edicion/portada/', $parameters = array(), $secure = null);}}">Portada (Edición)<span class="fa arrow"></span></a>
+            </li>            
+            <li>
+                <a href="#"> Textos Centrales<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ action('CentraltextosController@index') }}"><i class="fa fa-edit fa-fw"></i> Listado</a>
+                    </li>
+                </ul>
             </li>
 <!--            <li>
                 <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>

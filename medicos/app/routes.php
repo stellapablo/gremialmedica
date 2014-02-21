@@ -32,7 +32,7 @@ Route::get('/test', function() {
 
 
 Route::get('/', 'portadaController@inicio');
-Route::get('edicion/portada/', 'portadaController@edicion');
+//Route::get('edicion/portada/', 'portadaController@edicion');
 
 Route::post('edicion/actualizarPortada', 'portadaController@actualizarPortada');
 
@@ -89,3 +89,32 @@ Route::resource('/contacto', 'contactoController@Contacto');
 Route::resource('edicion/contacto', 'contactoController@ContactoEdicion');
 
 Route::post('edicion/actualizarContacto', 'contactoController@actualizarContacto');
+
+Route::resource('centraltextos', 'CentraltextosController');
+
+
+ Route::group(array('before' => 'auth'), function() {
+    Route::post('edicion/actualizarPortada', 'portadaController@actualizarPortada');
+//    Route::resource('edicion/sobre_nosotros', 'sobreNosotrosController@SobreNosotrosEdicion');
+//    Route::post('edicion/actualizarsobre_nosotros', 'sobreNosotrosController@actualizarsobre_nosotros');
+//    Route::post('afiliate', 'sobreNosotrosController@actualizarsobre_nosotros');
+//    Route::get('nueva/noticia', 'noticiasController@nuevaNoticia');
+//    Route::post('/guardarNoticia', 'noticiasController@guardarNoticia');
+//    Route::get('edicion/noticia/{slug}', 'noticiasController@editarNoticiaActual');
+//    Route::post('/edicion/noticia/{slug}/actualizarNoticia', 'noticiasController@editarNoticiaActual_guardar');    
+//    Route::post('/listado/actualizarEstadoNoticia','noticiasController@actualizarEstadoNoticia');
+//
+//    Route::get('edicionNoticia', function()
+//     {
+//        return URL::action('noticiasController@editarNoticiaActual', array('slug'));
+//     });
+    Route::get('edicion/portada/', 'portadaController@edicion');    
+    
+//    Route::get('/listado/noticias','noticiasController@listarNoticias');
+//
+//    Route::resource('carrucels', 'CarrucelsController');
+//
+//    Route::resource('galeria', 'GaleriaController');
+    
+});
+ 

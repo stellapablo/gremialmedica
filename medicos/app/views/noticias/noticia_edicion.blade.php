@@ -13,7 +13,11 @@
                             <div id="titulo" contenteditable="true"> {{$noticia->titulo}}</div>
                             <div id="fecha" contenteditable="true">{{$noticia->fecha}}</div>
                             <article>
-                                <img src="{{$noticia->imagen}}" />
+                                <?php
+                                        if($noticia->imagen!=''){
+                                ?>
+                                        <img src="{{$noticia->imagen}}" />
+                                <?php }; ?>
 
                                 <div id="desarrollo" contenteditable="true">{{$noticia->desarrollo}}</div>
                             </article>
